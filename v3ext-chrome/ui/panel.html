@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BC – Магазин V3</title>
+  <link rel="stylesheet" href="panel.css" />
+</head>
+<body>
+  <div class="bc-panel">
+    <header class="bc-header">
+      <h1>Магазин – стратегия V3</h1>
+      <div class="bc-meta">
+        <span id="bc-season"></span>
+        <span id="bc-balance"></span>
+      </div>
+    </header>
+
+    <section class="bc-strategy">
+      <h2>Стратегия</h2>
+      <label><input type="radio" name="bc-strategy" value="v1" checked> V1 (классическая)</label>
+      <label><input type="radio" name="bc-strategy" value="v2"> V2 (profit-dominance)</label>
+    </section>
+
+    <section class="bc-reco">
+      <h2>Рекомендация</h2>
+      <div id="bc-reco-text" class="bc-reco-text">Загрузка...</div>
+      <div class="bc-actions">
+        <button id="bc-done" class="btn primary">Сделано</button>
+        <button id="bc-skip" class="btn">Пропустить</button>
+      </div>
+    </section>
+
+    <section class="bc-checklist">
+      <h2>Чек-лист</h2>
+      <ul id="bc-checklist" class="bc-list"></ul>
+    </section>
+
+    <section class="bc-logs">
+      <h2>Телеметрия (боты)</h2>
+      <div class="bc-logs-controls">
+        <button id="bc-refresh-logs" class="btn">Обновить</button>
+        <button id="bc-clear-logs" class="btn">Очистить</button>
+        <button id="bc-download-logs" class="btn">Скачать логи</button>
+      </div>
+      <pre id="bc-logs-view" class="bc-logs-view">—</pre>
+    </section>
+
+    <section class="bc-offers">
+      <h2>Офферы</h2>
+      <div class="bc-offer-controls">
+        <button id="bc-offer-buy" class="btn">Отправить оффер покупки (лучший питомник)</button>
+        <button id="bc-offer-sell" class="btn">Отправить оффер продажи (излишки)</button>
+      </div>
+    </section>
+
+    <section class="bc-autotrade">
+      <h2>Периодическая автоторговля</h2>
+      <div class="bc-autotrade-controls">
+        <label><input type="checkbox" id="bc-auto-toggle"> включить</label>
+        <label>период, сек: <input type="number" id="bc-auto-interval" value="45" min="5" step="5" style="width:70px"></label>
+      </div>
+      <div class="bc-risk-controls">
+        <label>резерв, %: <input type="number" id="bc-risk-pct" value="15" min="0" max="90" step="1" style="width:70px"></label>
+        <label>резерв, мин: <input type="number" id="bc-risk-abs" value="30" min="0" step="1" style="width:90px"></label>
+      </div>
+    </section>
+
+    <footer class="bc-footer">
+      <small>V3: можно переключаться между V1 и V2.</small>
+    </footer>
+  </div>
+
+  <script src="shim.js"></script>
+  <script type="module" src="panel.js"></script>
+</body>
+</html>
